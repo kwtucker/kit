@@ -1,2 +1,1 @@
 # kit
-collection of scripts
