@@ -47,21 +47,18 @@ func main() {
 	}
 }
 
-// mPXDataServiceLogin Logs into MPX for a token, username, Id, duration, idletime.
 func request(url string) error {
 	var httpClient http.Client
 	var request *http.Request
-	// var response *http.Response
 	var contentBuffer io.Reader
 	var err error
 
 	request, err = http.NewRequest(http.MethodDelete, url, contentBuffer)
 	if err != nil {
-		errorMsg := fmt.Sprintf("Unable to create request: %v\n", err)
+		errorMsg := fmt.Sprintf("Unable to create request: %v", err)
 		fmt.Println(errorMsg)
 	}
 
-	// Make GET request
 	_, err = httpClient.Do(request)
 	if err != nil {
 		fmt.Println(err)
