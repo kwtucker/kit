@@ -15,7 +15,7 @@ var (
 )
 
 func main() {
-	flag.BoolVar(&Detail, "detail", false, "Get user accounts and roles.")
+	flag.BoolVar(&Detail, "d", false, "Get user accounts and roles.")
 	flag.StringVar(&Name, "n", "", "Name of user. ENVS -> MPXUSERNAME_ + NAME, MPXPASSWORD_ + NAME")
 	flag.Parse()
 
@@ -26,6 +26,11 @@ func main() {
 		nameCaps := strings.ToUpper(Name)
 		envUsername = os.Getenv("MPXUSERNAME" + "_" + nameCaps)
 		envPassword = os.Getenv(fmt.Sprintf("MPXPASSWORD_%s", nameCaps))
+	}
+
+	if envUsername == "" || envPassword == "" {
+		fmt.Println("Please make sure env variables MPXUSERNAME_NAME, MPXPASSWORD_NAME are set or MPXUSERNAME and MPXPASSWORD for use without passing in a name.")
+		return
 	}
 
 	fmt.Printf(fmt.Sprintf("\nUsing %s: %s\n", strings.ToTitle(Name), envUsername))
