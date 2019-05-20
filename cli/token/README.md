@@ -4,7 +4,7 @@ Token is a tool to get access rights from the Comcast MPX Console. It will lists
 
 ## Getting Started
 
-#### Clone this repo and install
+#### Get this repo and install
  
 ```shell
 $ go get github.com/kwtucker/kit/cli/token
