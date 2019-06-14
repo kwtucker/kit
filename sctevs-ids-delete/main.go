@@ -11,7 +11,7 @@ import (
 )
 
 const (
-	sctevsRaw = "https://sctevs.linear.theplatform.com/scte224/raw"
+	sctevsRaw = "https://sctevs.linear.preview.theplatform.com/scte224/raw"
 )
 
 var (
