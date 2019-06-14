@@ -11,6 +11,9 @@ import (
 )
 
 const (
+	// Prod
+	//  sctevsRaw = "https://sctevs.linear.theplatform.com/scte224/raw"
+	// Stage
 	sctevsRaw = "https://sctevs.linear.preview.theplatform.com/scte224/raw"
 )
 
